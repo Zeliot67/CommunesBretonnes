@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #B6C1C6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.DonneesController">
+   <children>
+      <Pane prefHeight="798.0" prefWidth="1289.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
+         <children>
+            <Text fill="WHITE" layoutX="44.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Points d'intérêts" />
+            <Text fill="WHITE" layoutX="29.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Départementales" />
+            <AnchorPane layoutX="1.0" layoutY="-2.0" prefHeight="715.0" prefWidth="377.0" style="-fx-background-color: #238DC2;">
+               <children>
+                  <Text fill="WHITE" layoutX="65.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez une ville bretonne">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="displayBox" layoutX="31.0" layoutY="202.0" prefHeight="45.0" prefWidth="314.0" style="-fx-background-color: white;" />
+                  <Text fill="WHITE" layoutX="52.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez un critère d'affichage">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="displayButton" layoutX="42.0" layoutY="616.0" mnemonicParsing="false" onAction="#afficherInformations" style="-fx-background-color: #238DC2;" text="Modifier l'affichage" textFill="WHITE" underline="true">
+                     <font>
+                        <Font size="29.0" />
+                     </font></Button>
+                  <ComboBox fx:id="townNameComboBox" layoutX="87.0" layoutY="69.0" prefHeight="45.0" prefWidth="197.0" style="-fx-background-color: white;" />
+               </children>
+            </AnchorPane>
+            <Text layoutX="924.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quelques informations sur la commune">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="934.0" layoutY="64.0" prefHeight="222.0" prefWidth="314.0" style="-fx-background-color: #238DC2; -fx-background-radius: 30 30 30 30;">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Population (2020) : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Département :">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gare (pour voyageurs) : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gare (pour frêt) : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget (2019) :">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Label fx:id="townName" layoutX="70.0" layoutY="15.0" textFill="WHITE" />
+                  <Label fx:id="townPopulation" layoutX="160.0" layoutY="45.0" textFill="WHITE" />
+                  <Label fx:id="townDepartment" layoutX="125.0" layoutY="76.0" textFill="WHITE" />
+                  <Label fx:id="townTrainPeople" layoutX="190.0" layoutY="112.0" textFill="WHITE" />
+                  <Label fx:id="townTrainFret" layoutX="145.0" layoutY="144.0" textFill="WHITE" />
+                  <Label fx:id="townBudget" layoutX="140.0" layoutY="178.0" textFill="WHITE" />
+               </children></AnchorPane>
+            <Text layoutX="941.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L'immobillier de la commune en 2021">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="943.0" layoutY="368.0" prefHeight="102.0" prefWidth="314.0" style="-fx-background-color: #238DC2; -fx-background-radius: 30 30 30 30;">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix moyen du M2 : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surface moyenne en vente : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Label fx:id="townPriceM2" layoutX="160.0" layoutY="23.0" textFill="WHITE" />
+                  <Label fx:id="townSellArea" layoutX="220.0" layoutY="59.0" textFill="WHITE" />
+               </children></AnchorPane>
+            <Text layoutX="1046.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les voisins">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Line endX="249.0" endY="510.928955078125" layoutX="659.0" layoutY="311.0" startX="242.0" startY="-311.0" stroke="#e4e8eb" strokeWidth="10.0" />
+            <GridPane fx:id="gridPane" layoutX="383.0" layoutY="123.0" prefHeight="428.0" prefWidth="515.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <TextArea fx:id="neighborsField" layoutX="955.0" layoutY="558.0" prefHeight="119.0" prefWidth="300.0" style="-fx-background-color: #238DC2;">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+         </children>
+      </Pane>
+      <Pane prefHeight="92.0" prefWidth="1271.0" style="-fx-background-color: E4E8EB;">
+         <children>
+            <Text layoutX="337.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 42px;" text="Attractivité des communes bretonnes" textAlignment="CENTER" wrappingWidth="930.59814453125">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <Glow>
+                     <input>
+                        <ColorAdjust />
+                     </input>
+                  </Glow>
+               </effect>
+            </Text>
+            <ImageView blendMode="DARKEN" fitHeight="100.0" fitWidth="93.0" layoutX="1187.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo_def.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="107.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 36px;" text="Donnees ville " wrappingWidth="299.59814453125" />
+            <ImageView fx:id="homeImage" fitHeight="81.0" fitWidth="84.0" layoutX="14.0" layoutY="7.0" onMouseClicked="#handleHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane prefHeight="92.0" prefWidth="1271.0" style="-fx-background-color: E4E8EB;">
+         <children>
+            <Text layoutX="337.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 42px;" text="Attractivité des communes bretonnes" textAlignment="CENTER" wrappingWidth="930.59814453125">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <Glow>
+                     <input>
+                        <ColorAdjust />
+                     </input>
+                  </Glow>
+               </effect>
+            </Text>
+            <ImageView blendMode="DARKEN" fitHeight="100.0" fitWidth="93.0" layoutX="1187.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo_def.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="107.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 36px;" text="Donnees ville " wrappingWidth="299.59814453125" />
+            <ImageView fx:id="homeImage" fitHeight="81.0" fitWidth="84.0" layoutX="14.0" layoutY="7.0" onMouseClicked="#handleHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="459.0" minHeight="0.0" prefHeight="92.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="837.0" minHeight="0.0" prefHeight="708.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+</GridPane>
